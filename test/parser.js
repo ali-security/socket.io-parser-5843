@@ -3,6 +3,9 @@ var expect = require('expect.js');
 var helpers = require('./helpers.js');
 
 describe('parser', function(){
+    expect(() => new Decoder().add(999)).to.throwException(
+      /^Unknown type: 999$/
+    );
 
   it('exposes types', function(){
     expect(parser.CONNECT).to.be.a('number');
